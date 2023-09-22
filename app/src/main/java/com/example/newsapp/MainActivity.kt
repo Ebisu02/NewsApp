@@ -111,7 +111,7 @@ fun NewsList(newsList: LiveData<List<News>>) {
             modifier = Modifier
                 .fillMaxWidth(),
             content = {
-                items(list.take(4).shuffled()) { news ->
+                items(list.shuffled().distinct().take(4)) { news ->
                     NewsItem(news = news)
                 }
             }
